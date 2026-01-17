@@ -46,7 +46,7 @@ def check_for_updates() -> Optional[UpdateInfo]:
             api_url,
             headers={
                 "Accept": "application/vnd.github.v3+json",
-                "User-Agent": "veo3free-updater"
+                "User-Agent": "hetangtts-updater"
             }
         )
 

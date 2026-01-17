@@ -38,26 +38,26 @@ jobs:
       - name: Build macOS app
         run: |
           uv sync
-          uv run pyinstaller veo3free.spec --clean
+          uv run pyinstaller hetangtts.spec --clean
 
       - name: Create DMG
         run: |
           brew install create-dmg
           create-dmg \
-            --volname "veo3free" \
+            --volname "hetangtts" \
             --window-pos 200 120 \
             --window-size 600 400 \
             --icon-size 100 \
-            --icon "veo3free.app" 150 185 \
+            --icon "hetangtts.app" 150 185 \
             --app-drop-link 450 185 \
-            "veo3free-macos.dmg" \
-            "dist/veo3free.app"
+            "hetangtts-macos.dmg" \
+            "dist/hetangtts.app"
 
       - name: Upload DMG
         uses: actions/upload-artifact@v4
         with:
-          name: veo3free-macos
-          path: veo3free-macos.dmg
+          name: hetangtts-macos
+          path: hetangtts-macos.dmg
 
   build-windows:
     runs-on: windows-latest
@@ -88,13 +88,13 @@ jobs:
       - name: Build Windows exe
         run: |
           uv sync
-          uv run pyinstaller veo3free.spec --clean
+          uv run pyinstaller hetangtts.spec --clean
 
       - name: Upload Windows build
         uses: actions/upload-artifact@v4
         with:
-          name: veo3free-windows
-          path: dist/veo3free.exe
+          name: hetangtts-windows
+          path: dist/hetangtts.exe
 
   release:
     needs: [build-macos, build-windows]
@@ -108,13 +108,13 @@ jobs:
 
       - name: Package Windows build
         run: |
-          cd veo3free-windows
-          zip -r ../veo3free-windows.zip veo3free.exe
+          cd hetangtts-windows
+          zip -r ../hetangtts-windows.zip hetangtts.exe
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            veo3free-macos/veo3free-macos.dmg
-            veo3free-windows.zip
+            hetangtts-macos/hetangtts-macos.dmg
+            hetangtts-windows.zip
           generate_release_notes: true

@@ -3,8 +3,8 @@
 import sys
 from pathlib import Path
 
-APP_NAME = "veo3free"
-GITHUB_REPO = "jasper9w/veo3free"
+APP_NAME = "hetangtts"
+GITHUB_REPO = "jasper9w/HeTangTTS"
 __version__ = "0.1.0"
 
 
