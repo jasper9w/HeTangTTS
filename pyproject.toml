@@ -9,4 +9,8 @@ dependencies = [
     "loguru>=0.7.0",
     "requests>=2.31.0",
     "pydub>=0.25.1",
+    "pyinstaller>=6.18.0",
+    "qtpy>=2.4.3",
+    "pyqt6>=6.10.2",
+    "pyqt6-webengine>=6.10.0",
 ]

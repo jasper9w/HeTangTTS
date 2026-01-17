@@ -59,7 +59,7 @@ def main():
     # 设置 window 引用用于 evaluate_js
     api.set_window(window)
 
-    webview.start(debug=dev_mode)
+    webview.start(debug=dev_mode, gui="qt")
 
 
 if __name__ == "__main__":
